@@ -1,6 +1,6 @@
 # Site Institucional - Consultório de Psicologia
 
-[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-354F49?style=for-the-badge&logo=github)](https://matheuspolichiarelli.github.io/site-psicologia)
+[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-354F49?style=for-the-badge&logo=github)](https://matheuspolichiarelli.github.io/site-institucional-consultorio-psicologia)
 [![Tech](https://img.shields.io/badge/Tech-HTML5%20%7C%20CSS3%20%7C%20JS-E8F3EE?style=for-the-badge)](https://developer.mozilla.org/pt-BR/docs/Web)
 
 ## Sobre o Projeto
