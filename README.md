@@ -6,8 +6,6 @@
 ## Sobre o Projeto
 Este é um projeto de site institucional desenvolvido para um consultório de psicologia clínica e jurídica. O foco principal foi criar uma experiência de usuário (UX) que transmita **acolhimento, serenidade e profissionalismo**, utilizando uma paleta de cores leves e elementos visuais orgânicos.
 
-O projeto faz parte do meu portfólio de transição de carreira, onde aplico conceitos de design responsivo e arquitetura de software que também utilizo em meus projetos de **Agrotech (C#/.NET)** e **Mobile (Flutter)**.
-
 ## Funcionalidades
 * **Design Responsivo:** Adaptado para dispositivos móveis, tablets e desktops.
 * **Seções Estruturadas:** Áreas de atuação (Clínica e Jurídica), modalidades de atendimento e FAQ interativo.
