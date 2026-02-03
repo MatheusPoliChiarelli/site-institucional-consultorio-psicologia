@@ -1,0 +1,785 @@
+/* =========================================
+   1. GERAL & VARIÁVEIS
+========================================= */
+:root {
+    --cor-primaria: #354F49;     /* Verde Escuro */
+    --cor-secundaria: #E8F3EE;   /* Verde Claro/Bege */
+    --cor-texto: #4A4A4A;        /* Cinza Escuro */
+    --cor-branco: #FFFFFF;
+    --sombra-suave: 0 4px 20px rgba(0,0,0,0.08);
+    --cor-destaque: #D9A066;   
+    --cor-suave-bg: #F4F9F7;     
+    --sombra-colorida: 0 8px 30px rgba(53, 79, 73, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* Botões */
+.btn-primary {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 20px; /* Borda levemente arredondada, mas sóbria */
+    font-weight: 500;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #263b36;
+    transform: translateY(-2px);
+}
+
+/* Espaçamento Padrão */
+.section-padding {
+    padding: 100px 0; /* Espaço generoso entre seções */
+}
+
+/* Utilitários de Fundo */
+.bg-light-green {
+    background-color: var(--cor-secundaria);
+}
+
+.dark-bg {
+    background-color: var(--cor-primaria);
+    color: #fff;
+}
+
+/* =========================================
+   2. HEADER
+========================================= */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2 {
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+    line-height: 1.2;
+}
+
+.logo span {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a:hover {
+    color: var(--cor-primaria);
+}
+
+.desktop-only { display: inline-block; }
+
+/* =========================================
+   3. HERO 
+========================================= */
+.hero {
+    padding: 80px 0;
+    background-color: #fff;
+    overflow: hidden; /* Evita rolagem lateral se a imagem for muito grande */
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px; /* Diminui um pouco o espaço vazio entre eles */
+}
+
+.hero-text {
+    flex: 1; /* Ocupa espaço proporcional */
+    max-width: 600px; /* Garante que o texto não estique demais */
+}
+
+.hero-text h1 {
+    font-size: 4rem; /* AUMENTADO: Isso fará o texto quebrar em 3 linhas */
+    color: var(--cor-texto);
+    margin-bottom: 25px;
+    line-height: 1.1; /* Deixa as linhas mais unidas (mais elegante) */
+    font-weight: 600;
+    letter-spacing: -1px; /* Aproxima levemente as letras */
+}
+
+.hero-text .quote {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 35px;
+    display: block;
+    font-size: 1.1rem;
+}
+
+.hero-img {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Alinha a imagem para a direita */
+}
+
+.hero-img img {
+    width: 80%; /* Aumentei um pouco para ocupar mais espaço horizontal */
+    max-width: 650px; 
+    height: 100%;
+    max-height: 500px; 
+  
+    
+    /* Formato Orgânico mais Amplo e Arredondado */
+    border-radius: 60% 40% 50% 50% / 40% 50% 50% 60%;
+    
+    transition: all 0.5s ease-in-out; 
+    box-shadow: var(--sombra-suave);
+    object-fit: cover; /* Garante que a foto não distorça ao mudar o raio */
+}
+
+.hero-img img:hover {
+    /* Efeito suave ao passar o mouse, invertendo levemente os eixos */
+    border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
+}
+
+/* =========================================
+   4. CARDS & GRIDS
+========================================= */
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    color: var(--cor-primaria);
+}
+
+.light-text h2 { color: #fff; }
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* =========================================
+Efeito Hover 
+========================================= */
+
+.card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--sombra-suave);
+    
+    /* Configuração da Borda e Transição */
+    border: 3.5px solid transparent; /* Borda invisível para reservar espaço */
+    transition: all 0.3s ease;     /* Animação suave para tudo (posição e cor) */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Mantém o card subindo um pouquinho */
+    
+    /* A Mágica acontece aqui: */
+    border-color: #A3C9BE; /* Um verde "sálvia" bem suave e relaxante */
+    box-shadow: 0 8px 25px rgba(53, 79, 73, 0.5); /* Sombra levemente esverdeada */
+}
+
+/* =========================================
+   5. SEÇÕES DIVIDIDAS (Sobre / Motivos)
+========================================= */
+.split-layout {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.split-layout img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+}
+
+.about-text h3, .motivos-text h3 {
+    font-size: 2rem;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+}
+
+/* Ajuste de espaçamento do botão na seção Motivos */
+.motivos-text .btn-primary {
+    margin-top: 1rem; /* Empurra o botão para baixo */
+}
+
+.highlight-box {
+    background-color: var(--cor-secundaria);
+    padding: 25px;
+    border-left: 5px solid var(--cor-primaria);
+    margin-top: 25px;
+    border-radius: 4px;
+}
+
+
+/* =========================================
+   Efeito Hover: O Despertar (Zoom & Brilho)
+========================================= */
+
+/* Importante: O container precisa ter overflow: hidden para o zoom não vazar */
+.motivos-img {
+    overflow: hidden;
+    border-radius: 12px; /* Garante que o container tenha a mesma borda */
+}
+
+.motivos-img img {
+    border-radius: 12px; /* Mantém o formato original */
+    box-shadow: var(--sombra-suave);
+    /* Transição mais longa para um efeito cinematográfico */
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.6s ease;
+    filter: brightness(1); /* Brilho normal */
+}
+
+.motivos-img img:hover {
+    transform: scale(1.08); /* Zoom de 8% */
+    filter: brightness(1.15) contrast(1.05); /* Aumenta brilho e contraste */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2); /* Sombra mais dramática */
+}
+
+
+
+
+/* =========================================
+   6. ATUAÇÃO (Dark) & MODALIDADES
+========================================= */
+.modalidades-grid {
+    display: flex;
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    flex-wrap: wrap;        /* Garante que no celular eles fiquem um abaixo do outro */
+    gap: 30px;
+    padding: 20px 0;
+}
+.card-dark {
+    background-color: rgba(255,255,255,0.05); /* Fundo levemente transparente */
+    height: 200px; /* Aumentei um pouco a altura para caber o ícone */
+    border-radius: 12px;
+
+    flex: 0 1 300px; /* Define que o card tenta ter 300px, mas pode encolher se necessário */
+    min-width: 250px;
+    
+    /* Centralização Flexbox */
+    display: flex;
+    flex-direction: column; /* Coloca um em cima do outro */
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Espaço entre o ícone e o texto */
+    
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+/* Efeito ao passar o mouse */
+.card-dark:hover {
+    background-color: rgba(255,255,255,0.1); /* Fica um pouco mais claro */
+    transform: translateY(-5px);
+}
+
+/* Estilo da Imagem/Ícone */
+.card-dark img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    
+    /* DICA DE OURO: Esse filtro inverte a cor da imagem para BRANCO. 
+       Assim você pode baixar ícones pretos comuns e eles ficam brancos no site! */
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.card-dark h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff; /* Garante que o texto seja branco */
+}
+
+.modalidades-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card-white {
+    background: #fff;
+    padding: 50px 30px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    width: 300px;
+    text-align: center;
+}
+
+
+
+
+
+
+/* =========================================
+   MODALIDADES (Split Screen - Correção do Zoom)
+========================================= */
+#modalidades {
+    padding: 0;
+    width: 100%;
+}
+
+.split-screen {
+    display: flex;
+    width: 100%;
+    height: 600px;
+}
+
+.split-item {
+    flex: 1;
+    position: relative;
+    /* O segredo está aqui: esconde o que vazar do container durante o zoom */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- NOVA REGRA PARA A IMAGEM DE FUNDO --- */
+.split-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto preencha tudo sem distorcer */
+    z-index: 0; /* Fica no fundo de tudo */
+    
+    /* Animação SUAVE de verdade */
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform; /* Otimização para o navegador */
+}
+
+/* O Efeito Hover Corrigido: Zoom suave na tag IMG */
+.split-item:hover .split-bg-img {
+    transform: scale(1.08); /* Zoom de 8% */
+}
+
+/* Camada Escura (Overlay) */
+.split-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(53, 79, 73, 0.7);
+    transition: background-color 0.5s ease;
+    z-index: 1; /* Fica acima da imagem */
+    
+}
+
+/* Hover: Clareia levemente o overlay */
+.split-item:hover .split-overlay {
+    background-color: rgba(53, 79, 73, 0.5);
+}
+
+/* Conteúdo (Texto) */
+/* Conteúdo (Texto) */
+.split-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 0 40px;
+    max-width: 500px;
+    height: 100%;
+
+    /* Layout em Grid para controle total da reta horizontal */
+    display: grid;
+    grid-template-rows: 1fr auto auto 1fr; /* Cria 4 áreas: Espaço Superior, Título, Texto, Botão, Espaço Inferior */
+    align-items: center;
+    justify-items: center;
+}
+
+.split-content h3 {
+    grid-row: 2; /* Segunda linha do grid */
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 20px;
+    height: 80px; /* Altura fixa para o título */
+    display: flex;
+    align-items: center;
+}
+
+.split-content p {
+    grid-row: 3; /* Terceira linha do grid */
+    font-size: 1.1rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    margin: 0;
+    padding-bottom: 40px;
+    height: 100px; /* Altura fixa para a descrição */
+    display: flex;
+    align-items: center;
+}
+
+.btn-outline {
+    grid-row: 4; /* Quarta linha do grid - Alinhamento garantido */
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: 0.3s;
+    display: inline-block;
+    align-self: start; /* Começa exatamente onde o padding do <p> termina */
+}
+.btn-outline:hover {
+    background-color: #fff;
+    color: var(--cor-primaria);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   9. RELATOS (Depoimentos)
+========================================= */
+.testimonial-card {
+    background-color: #f9f9f9; /* Um cinza muito leve para destacar do fundo branco */
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.client-name {
+    font-weight: 600;
+    color: var(--cor-primaria);
+    display: block;
+}
+
+/* =========================================
+   10. FAQ (Accordion Moderno)
+========================================= */
+/* Container do FAQ */
+.faq-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Espaço entre os cards */
+}
+
+/* O Card de cada pergunta */
+.faq-item {
+    background-color: var(--cor-branco);
+    border-radius: 12px;
+    border: 1px solid rgba(53, 79, 73, 0.1); /* Borda sutil com sua cor primária */
+    box-shadow: var(--sombra-suave);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Estado quando o card está aberto */
+.faq-item[open] {
+    box-shadow: 0 10px 25px rgba(53, 79, 73, 0.12); /* Sombra mais profunda ao abrir */
+    border-color: var(--cor-primaria);
+}
+
+/* O Título/Pergunta */
+.faq-item summary {
+    padding: 22px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--cor-primaria); /* Destaque na pergunta */
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.faq-item summary:hover {
+    background-color: var(--cor-secundaria); /* Feedback visual suave */
+}
+
+/* Ícone de + e - personalizado */
+.faq-item summary::after {
+    content: '+';
+    font-size: 1.4rem;
+    color: var(--cor-primaria);
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+    content: '−'; /* Usando um travessão para ficar mais elegante */
+    transform: rotate(180deg);
+}
+
+/* O Conteúdo/Resposta */
+.faq-content {
+    /* MUDANÇA: Padding de 22px em todos os lados (cima, direita, baixo, esquerda) */
+    padding: 22px; 
+    
+    color: var(--cor-texto);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    border-top: 1px solid rgba(53, 79, 73, 0.05); /* Uma linha bem sutil para separar */
+    
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Garante que o parágrafo não adicione margens extras que estraguem o padding */
+.faq-content p {
+    margin: 0;
+}
+
+/* Keyframes para a suavidade */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* =========================================
+   7. FOOTER
+========================================= */
+.dark-footer {
+    background-color: var(--cor-primaria); /* Usa o seu verde escuro do root */
+    color: var(--cor-branco);
+    padding: 60px 0 0 0; /* Mais respiro no topo */
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-col h3, .footer-col h4 {
+    margin-bottom: 20px;
+    color: var(--cor-secundaria); /* Um destaque suave */
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--cor-branco);
+    padding-left: 5px; /* Efeito sutil de hover */
+}
+
+.crp-info, .epsi-badge {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.2); /* Tom mais escuro para o copyright */
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-links a {
+    display: block;
+    margin-bottom: 10px;
+}
+/* =========================================
+   8. RESPONSIVIDADE & MENU MOBILE
+========================================= */
+.mobile-menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--cor-primaria);
+    margin: 5px;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .desktop-only { display: none; }
+    
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 8vh;
+        height: 92vh;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        padding-top: 50px;
+    }
+
+    .nav-links.active { transform: translateX(0%); }
+
+    .mobile-menu-icon { display: block; }
+
+    /* Ajustes Gerais Mobile */
+    .hero .container, 
+    .split-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-img, .about-img, .motivos-img {
+        margin-top: 30px;
+        order: -1; /* Joga a imagem para cima do texto no mobile */
+    }
+
+    .cards-grid-4 { grid-template-columns: 1fr 1fr; }
+    
+    .modalidades-grid { flex-direction: column; align-items: center; }
+
+    /* Animação X do Menu */
+    .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+    .toggle .line2 { opacity: 0; }
+    .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
+}
+
+
+
+
+
+
+.whatsapp-fixo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366; /* Cor oficial */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição apenas de escala e sombra */
+    text-decoration: none;
+}
+
+/* Hover: Aumenta levemente e brilha, mas MANTÉM a cor oficial */
+.whatsapp-fixo:hover {
+    transform: scale(1.1);
+    background-color: #25D366; /* Força a manutenção da cor */
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+}
+
+/* Tooltip (Balão de agendar consulta) */
+.tooltip-wpp {
+    position: absolute;
+    right: 80px; /* Distância do botão */
+    background-color: var(--cor-branco);
+    color: var(--cor-primaria); /* Verde escuro do seu root para legibilidade */
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: var(--sombra-suave);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(10px); /* Começa um pouco pro lado */
+}
+
+/* Faz o texto aparecer no hover */
+.whatsapp-fixo:hover .tooltip-wpp {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0); /* Desliza para a posição final */
+}
+
+/* Animação de pulso suave */
+.whatsapp-fixo::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #25D366;
+    border-radius: 50%;
+    z-index: -1;
+    animation: wpp-pulse 2s infinite;
+}
+
+@keyframes wpp-pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
