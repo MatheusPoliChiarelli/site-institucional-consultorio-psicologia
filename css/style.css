@@ -1,6 +1,11 @@
 /* =========================================
    1. GERAL & VARIÁVEIS
 ========================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
     --cor-primaria: #354F49;     /* Verde Escuro */
     --cor-secundaria: #E8F3EE;   /* Verde Claro/Bege */
