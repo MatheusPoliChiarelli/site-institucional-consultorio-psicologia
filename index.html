@@ -91,41 +91,86 @@
         </div>
     </section>
 
+
+<section id="psicoterapia" class="section-padding">
+        <div class="container split-layout">
+            
+            <div class="about-text">
+                <h3>Porque eu acredito na Psicoterapia?</h3>
+                <p>Durante a minha infância, fui uma criança bastante tímida, distraída e inquieta no ambiente escolar. Essas características 
+                    trouxeram desafios importantes no processo de aprendizagem, especialmente na matemática. Diante dessas dificuldades, iniciei psicoterapia ainda muito cedo. 
+                    <br>Esse processo foi fundamental para o meu desenvolvimento pessoal, emocional e acadêmico.
+A experiência transformadora que vivi na psicoterapia despertou em mim o desejo de compreender mais profundamente o funcionamento humano e de oferecer a outras 
+pessoas o mesmo suporte que recebi. Foi assim que escolhi me tornar psicólogo.
+<br>Acredito que a psicoterapia é um espaço de acolhimento, reflexão e transformação. Ela pode contribuir para o desenvolvimento do autoconhecimento, auxiliar na 
+ de padrões comportamentais que, por vezes, não estão alinhados aos seus valores, e favorecer mudanças mais conscientes e saudáveis.
+<br>Se você busca compreender melhor a si mesmo(a) e construir caminhos mais coerentes com aquilo que deseja para sua vida, a psicoterapia pode ser um importante 
+recurso nesse processo.
+</p>
+            </div>
+
+            <div class="about-img">
+                <img src="assets/img/consultorio.png" alt="Consultorio">
+            </div>
+
+        </div>
+    </section>
+
+
+
+
 <section id="atuacao" class="section-padding dark-bg">
     <div class="container">
         <div class="section-title light-text">
             <h2>Áreas de atuação</h2>
         </div>
         
-        <div class="modalidades-grid">
-            
-        
-            <div class="card-dark">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-                <h3>Psicologia Clínica</h3>
+        <div class="tabs-wrapper">
+            <div class="tabs-navigation">
+                <div class="card-dark tab-btn active" onclick="openTab(event, 'clinica')">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <span>Psicologia Clínica</span>
+                </div>
+
+                <div class="card-dark tab-btn" onclick="openTab(event, 'juridica')">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="7" x2="12" y2="22"></line>
+                        <path d="M5 22h14"></path>
+                        <path d="M5 7h14"></path>
+                        <path d="M2 12l3-5 3 5a3 3 0 0 1-6 0Z"></path>
+                        <path d="M16 12l3-5 3 5a3 3 0 0 1-6 0Z"></path>
+                    </svg>
+                    <span>Psicologia Jurídica</span>
+                </div>
             </div>
 
-            <div class="card-dark">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="7" x2="12" y2="22"></line>
-                    <path d="M5 22h14"></path>
-                    <path d="M5 7h14"></path>
-                    <path d="M2 12l3-5 3 5a3 3 0 0 1-6 0Z"></path>
-                    <path d="M16 12l3-5 3 5a3 3 0 0 1-6 0Z"></path>
-                </svg>
-                <h3>Psicologia Jurídica</h3>
+            <div class="tabs-content">
+                <div id="clinica" class="tab-pane active">
+                    <h3>Psicologia Clínica</h3>
+                    <p>A clínica é um espaço de escuta qualificada e ética, voltado para o tratamento de questões emocionais e comportamentais. 
+                        O objetivo é auxiliar o paciente a compreender seus padrões de pensamento, lidar com angústias e desenvolver estratégias 
+                        para enfrentar desafios como ansiedade, depressão e estresse. É um processo de autoconhecimento que visa promover o bem-estar mental e a 
+                        autonomia, respeitando sempre o tempo e a singularidade de cada indivíduo.</p>
+                </div>
+
+                <div id="juridica" class="tab-pane">
+                    <h3>Psicologia Jurídica</h3>
+                    <p>A atuação na área jurídica ocorre na intersecção entre a saúde mental e o sistema legal. O foco aqui é fornecer subsídios técnicos para 
+                        decisões judiciais através da elaboração de laudos e pareceres psicológicos. Realizo avaliações periciais em contextos de varas de família, 
+                        infância e juventude, ou cíveis, analisando aspectos subjetivos que são fundamentais para a justiça, sempre pautado pelo rigor científico e pela 
+                        imparcialidade.</p>
+                </div>
             </div>
-
-           
-
         </div>
     </div>
 </section>
+
+           
 
 
 
@@ -306,8 +351,12 @@
                     Instagram
                 </a>
             </div>
-            <p>luisvergueiro@gmail.com</p>
-        </div>
+    <p>
+        <a href="mailto:Lghfvergueiro@gmail.com" class="email-link">
+            Lghfvergueiro@gmail.com
+        </a>
+    </p>
+</div>
     </div>
 
     <div class="footer-bottom">
@@ -326,6 +375,16 @@
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
     </svg>
     <span class="tooltip-wpp">Agendar Consulta</span>
+</a>
+
+
+<a href="https://www.instagram.com/psicologoluisvergueiro/"  class="instagram-fixo" target="_blank" aria-label="Seguir no Instagram">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+    </svg>
+    <span class="tooltip-inst">Siga no Instagram</span>
 </a>
 
 
