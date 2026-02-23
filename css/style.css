@@ -114,7 +114,7 @@ header .container {
 }
 
 .nav-links a:hover {
-    color: var(--cor-primaria);
+    color: rgb(255,0,0,100);
 }
 
 .desktop-only { display: inline-block; }
