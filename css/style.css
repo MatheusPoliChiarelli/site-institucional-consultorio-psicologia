@@ -107,6 +107,12 @@ header .container {
     gap: 30px;
 }
 
+.nav-links a {
+  text-decoration: none; /* remove sublinhado */
+  color: #000; /* cor padrão */
+  transition: color 0.3s; /* efeito suave */
+}
+
 .nav-links a:hover {
     color: var(--cor-primaria);
 }
