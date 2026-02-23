@@ -285,24 +285,27 @@ Efeito Hover
 /* Estilo para transformar os cards em abas clicáveis */
 .tabs-wrapper {
     display: flex;
-    gap: 40px;
-    align-items: flex-start;
+    flex-direction: column; /* Coloca a nav em cima do conteúdo */
+    gap: 20px;
     margin-top: 30px;
 }
 
-/* Coluna da Esquerda (Nav) */
 .tabs-navigation {
-    flex: 1; /* Ocupa menos espaço que o texto */
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Alinha os dois botões lado a lado */
+    justify-content: center; /* Centraliza a "nav bar" no meio da tela */
     gap: 15px;
+    width: 100%;
 }
 
 .card-dark.tab-btn {
+    flex: 1; /* Faz os botões terem o mesmo tamanho */
+    max-width: 300px; /* Evita que fiquem largos demais em telas grandes */
     display: flex;
     align-items: center;
+    justify-content: center; /* Centraliza ícone e texto dentro do botão */
     gap: 15px;
-    padding: 20px;
+    padding: 15px 25px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     cursor: pointer;
@@ -313,6 +316,7 @@ Efeito Hover
 .card-dark.tab-btn.active {
     background: rgba(255, 255, 255, 0.1);
     border-color: #4ade80;
+    
 }
 
 .card-dark.tab-btn span {
@@ -322,8 +326,8 @@ Efeito Hover
 
 /* Coluna da Direita (Conteúdo) */
 .tabs-content {
-    flex: 2; /* Dá mais espaço para a leitura */
-    min-height: 250px;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .tab-pane {
@@ -332,6 +336,12 @@ Efeito Hover
     background: rgba(255, 255, 255, 0.03);
     border-radius: 15px;
     animation: fadeIn 0.4s ease;
+    font-size: 15.5px;
+}
+
+.tab-pane h3 {
+    color: #4ade80;
+    font-size: 20px;
 }
 
 .tab-pane.active {
