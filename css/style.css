@@ -6,6 +6,20 @@ html {
   scroll-behavior: smooth;
 }
 
+section[id] {
+    /* Essa é a mágica: O navegador "finge" que a seção começa X pixels antes */
+    /* Ajuste esse valor para a ALTURA DO SEU HEADER + uns 20px de respiro */
+    scroll-margin-top: 8px; 
+}
+
+#modalidades {
+    scroll-margin-top: 110px;
+}
+
+#home {
+    scroll-margin-top: 50px;
+}
+
 :root {
     --cor-primaria: #354F49;     /* Verde Escuro */
     --cor-secundaria: #E8F3EE;   /* Verde Claro/Bege */
@@ -114,10 +128,24 @@ header .container {
 }
 
 .nav-links a:hover {
-    color: #25D366;
+    color: #3CB371; /* Medium Sea Green */
+    transition: color 0.3s ease; /* Adiciona suavidade na troca de cor */
 }
 
 .desktop-only { display: inline-block; }
+
+.logo-link {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit;        /* Mantém a cor original do texto (branco/verde) */
+    cursor: pointer;       /* Garante o ícone de clique */
+    display: inline-block; /* Melhora a área de clique */
+    transition: opacity 0.3s ease;
+}
+
+/* Opcional: Um leve efeito visual ao passar o mouse na logo */
+.logo-link:hover {
+    opacity: 0.8; 
+}
 
 /* =========================================
    3. HERO 
@@ -227,6 +255,31 @@ Efeito Hover
     border-color: #A3C9BE; /* Um verde "sálvia" bem suave e relaxante */
     box-shadow: 0 8px 25px rgba(53, 79, 73, 0.5); /* Sombra levemente esverdeada */
 }
+
+/* Container agora permite que a imagem cresça para fora */
+.img-zoom-container {
+    width: 100%;
+    overflow: visible; /* Mudança chave: permite que a imagem aumente de tamanho real */
+}
+
+/* A imagem em si */
+.img-zoom-container img {
+    width: 100%;
+    display: block;
+    border-radius: 12px; /* O arredondamento fica na imagem agora */
+    transition: transform 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+/* Ao passar o mouse, a imagem inteira aumenta de escala */
+.img-zoom-container:hover img {
+    transform: scale(1.05); /* Aumenta 5% para um efeito elegante e sutil */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra para dar profundidade ao crescer */
+    height: auto;
+    width: 100%;
+}
+
 
 /* =========================================
    5. SEÇÕES DIVIDIDAS (Sobre / Motivos)
@@ -502,7 +555,7 @@ Efeito Hover
     padding: 40px 30px;
     border-radius: 12px;
     text-align: center;
-    border: 1px solid #eee;
+    border: 10px solid #eee;
 }
 
 .testimonial-text {
@@ -601,6 +654,118 @@ Efeito Hover
 }
 
 
+
+
+
+/* =========================================
+   11. LOCALIZAÇÃO
+========================================= */
+/* Layout da Seção de Localização */
+/* --- LOCALIZAÇÃO CLEAN --- */
+
+/* Sobrescreve a cor 'dark-bg' apenas nesta seção */
+#localizacao {
+    /* Um tom acima do preto/verde escuro padrão */
+    background-color: var(--cor-secundaria); 
+    position: relative;
+}
+
+/* Cria uma linha flutuante no topo da seção */
+#localizacao::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%; /* Começa 10% da esquerda */
+    width: 80%; /* Ocupa 80% da largura */
+    height: 15px;
+    background-color: rgba(53, 79, 73, 0.50); /* A cor da linha */
+}
+
+
+
+
+#localizacao .section-title h2 {
+    color: var(--cor-primaria); /* Verde escuro oficial */
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Texto à esq, Mapa maior à dir */
+    gap: 60px; /* Mais espaço para respirar */
+    
+    /* AQUI ESTÁ A MÁGICA: Removemos o fundo e o padding do "quadrado" */
+    background: transparent; 
+    padding: 20px 0;
+    align-items: center;
+}
+
+/* Container do Mapa - Agora é o destaque */
+.map-container {
+    width: 100%;
+    height: 400px; /* Mapa mais imponente */
+    border-radius: 24px; /* Cantos bem arredondados (Super moderno) */
+    overflow: hidden;
+    
+    /* Sombra difusa para dar profundidade (efeito 3D sutil) */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8); 
+    
+    /* Borda fininha para acabamento premium */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efeito ao passar o mouse no mapa */
+.map-container:hover {
+    transform: translateY(-5px); /* O mapa "flutua" para cima */
+    box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.6);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: grayscale(20%) contrast(1.1); /* Opcional: deixa o mapa mais sóbrio */
+}
+
+/* Estilo dos itens de texto */
+.info-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px; /* Mais espaçamento entre os blocos */
+    padding-left: 10px; /* Pequeno recuo estético */
+    border-left: 2px solid transparent; /* Prepara para hover */
+    transition: 0.3s;
+}
+
+/* Destaque sutil ao passar o mouse no texto */
+.info-item:hover {
+    border-left-color: #4ade80; /* Linha verde aparece na esquerda */
+    padding-left: 20px; /* Texto anda levemente para a direita */
+}
+
+.info-item h3 {
+    color: var(--cor-primaria); /* Título verde para combinar com ícones */
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.info-item p {
+    color: rgba(0, 0, 0, 0.8); /* Branco gelo suave */
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+
+#localizacao .section-title p {
+    color: var(--cor-texto); /* Ou use #000000 para preto total */
+    font-size: 0.95rem;      /* Ajuste de tamanho */
+    opacity: 0.8;            /* Opacidade que já estava no inline */
+    margin-top: 10px;        /* Margem que já estava no inline */
+}
+
+
+
 /* =========================================
    7. FOOTER
 ========================================= */
@@ -612,9 +777,11 @@ Efeito Hover
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    /* MUDANÇA AQUI: Força 3 colunas de tamanhos iguais */
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 100px;
     padding-bottom: 40px;
+   
 }
 
 .footer-col h3, .footer-col h4 {
@@ -671,6 +838,15 @@ Efeito Hover
     opacity: 0.7; /* Dá um feedback visual ao passar o mouse */
     text-decoration: underline; /* Opcional: volta o sublinhado apenas no hover */
 }
+
+
+.container {
+    max-width: 1200px; /* Ou o tamanho que você usa no header */
+    margin: 0 auto;    /* A MÁGICA: Isso centraliza o bloco na tela */
+    padding: 0 20px;   /* Impede que o texto cole na borda do celular */
+    width: 100%;
+}
+
 /* =========================================
    8. RESPONSIVIDADE & MENU MOBILE
 ========================================= */
@@ -717,10 +893,29 @@ Efeito Hover
         text-align: center;
     }
     
-    .hero-img, .about-img, .motivos-img {
-        margin-top: 30px;
-        order: -1; /* Joga a imagem para cima do texto no mobile */
-    }
+/* Container agora permite que a imagem cresça para fora */
+.img-zoom-container {
+    width: 100%;
+    overflow: visible; /* Mudança chave: permite que a imagem aumente de tamanho real */
+}
+
+/* A imagem em si */
+.img-zoom-container img {
+    width: 100%;
+    display: block;
+    border-radius: 12px; /* O arredondamento fica na imagem agora */
+    transition: transform 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    cursor: pointer;
+}
+
+/* Ao passar o mouse, a imagem inteira aumenta de escala */
+.img-zoom-container:hover img {
+    transform: scale(1.05); /* Aumenta 5% para um efeito elegante e sutil */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra para dar profundidade ao crescer */
+}
+
+
+
 
     .cards-grid-4 { grid-template-columns: 1fr 1fr; }
     
