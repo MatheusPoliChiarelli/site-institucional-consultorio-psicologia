@@ -774,7 +774,7 @@ Efeito Hover
     color: var(--cor-branco);
     padding: 60px 0 0 0; /* Mais respiro no topo */
 }
-
+ 
 .footer-grid {
     display: grid;
     /* MUDANÇA AQUI: Força 3 colunas de tamanhos iguais */
