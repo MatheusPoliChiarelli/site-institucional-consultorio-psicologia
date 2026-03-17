@@ -862,6 +862,54 @@ Efeito Hover
     width: 100%;
 }
 
+
+/* Layout da faixa inferior (Desktop) */
+.footer-bottom-flex {
+    display: flex;
+    justify-content: space-between; /* Joga o copyright pra esquerda e a Mythros pra direita */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Centraliza tudo no Mobile */
+@media (max-width: 768px) {
+    .footer-bottom-flex {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* Estilo da assinatura da Agência */
+.developer-credit {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+    opacity: 0.8; /* Mantém sutil para não ofuscar o cliente */
+}
+
+.developer-credit a {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    color: var(--cor-branco); /* Puxa o branco do seu root */
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.developer-credit a:hover {
+    opacity: 1; /* Dá um leve destaque ao passar o mouse */
+}
+
+/* Tamanho da sua Logo */
+.mythros-logo {
+    height: 40px; /* Ajuste conforme a proporção da sua logo */
+    width: auto;
+    filter: brightness(0) invert(1); /* Truque rápido: se a sua logo original for preta, isso deixa ela branca! Remova se a logo já for branca. */
+}
+
 /* =========================================
    8. RESPONSIVIDADE & MENU MOBILE
 ========================================= */
