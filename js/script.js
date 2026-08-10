@@ -42,9 +42,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ==========================================
-// 1. LÓGICA DAS ABAS (ÁREAS DE ATUAÇÃO)
-// ==========================================
+
+// LÓGICA DAS ABAS (ÁREAS DE ATUAÇÃO) //
+
 function openTab(evt, tabName) {
     const panes = document.querySelectorAll('.tab-pane');
     const btns = document.querySelectorAll('.tab-btn');
@@ -56,9 +56,9 @@ function openTab(evt, tabName) {
     evt.currentTarget.classList.add('active');
 }
 
-// ==========================================
-// 2. SCROLL SUAVE NOS LINKS
-// ==========================================
+
+// SCROLL SUAVE NOS LINKS //
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -69,15 +69,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ==========================================
-// 3. MENU MOBILE HAMBÚRGUER (NOVO)
-// ==========================================
+
+// MENU MOBILE HAMBÚRGUER //
+
 document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
     const navLinks = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links li a');
 
-    // Abre e fecha o menu ao clicar no ícone do hambúrguer
+    
     if(mobileMenuIcon) {
         mobileMenuIcon.addEventListener('click', () => {
             navLinks.classList.toggle('active');
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fecha o menu automaticamente quando a pessoa clica em algum link
+    
     links.forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
