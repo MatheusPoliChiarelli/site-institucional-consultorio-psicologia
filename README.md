@@ -1,36 +1,37 @@
-# Site Institucional - Consultório de Psicologia
+# Luís Vergueiro Practice
 
-[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-354F49?style=for-the-badge&logo=github)](https://matheuspolichiarelli.github.io/site-institucional-consultorio-psicologia)
+[![Live Site](https://img.shields.io/badge/Live-luisvergueiropsicologo.com-354F49?style=for-the-badge&logo=googlechrome&logoColor=white)](https://luisvergueiropsicologo.com)
 [![Tech](https://img.shields.io/badge/Tech-HTML5%20%7C%20CSS3%20%7C%20JS-E8F3EE?style=for-the-badge)](https://developer.mozilla.org/pt-BR/docs/Web)
 
-## Sobre o Projeto
-Este é um projeto de site institucional desenvolvido para um consultório de psicologia clínica e jurídica. O foco principal foi criar uma experiência de usuário (UX) que transmita **acolhimento, serenidade e profissionalismo**, utilizando uma paleta de cores leves e elementos visuais orgânicos.
+Institutional website developed for a clinical and legal psychology practice. Delivered end to end through [Mythros Digital](https://mythrosdigital.com), with a focus on a warm, professional user experience.
 
-## Funcionalidades
-* **Design Responsivo:** Adaptado para dispositivos móveis, tablets e desktops.
-* **Seções Estruturadas:** Áreas de atuação (Clínica e Jurídica), modalidades de atendimento e FAQ interativo.
-* **Call to Action (CTA):** Botão flutuante de agendamento via WhatsApp com mensagem pré-definida.
-* **Identidade Visual:** Uso de formas orgânicas e variáveis CSS (`:root`) para consistência de marca.
+🔗 **Live site:** [luisvergueiropsicologo.com](https://luisvergueiropsicologo.com)
 
-## Tecnologias Utilizadas
-* **HTML5:** Semântica estrutural para melhor SEO.
-* **CSS3:** Layouts avançados com **Flexbox** e **CSS Grid**.
-* **JavaScript:** Interatividade no FAQ e animações de scroll.
-* **Design:** Formatos orgânicos baseados em `border-radius` complexos.
+## About
 
-## Organização de Pastas
-```
-├── /assets          # Recursos globais
-│   ├── /fonts       # Tipografias personalizadas
-│   ├── /icons       # SVGs e ícones de interface
-│   └── /img         # Fotografias e imagens otimizadas
-├── /css             
-    ├── style.css    # Estilização (style.css)
-├── /js              
-    ├── script.js    # Lógica e interatividade (script.js)
-├── /pages           # Páginas secundárias do site
-├── index.html       # Landing page principal
-└── README.md        # Documentação do repositório
-```
+The main goal of this project was to create a UX that communicates **warmth, calm, and professionalism**, using a soft color palette and organic visual elements throughout.
 
-Desenvolvido por Matheus Poli Chiarelli & Lin Shiau Lon Rocha
+## Features
+
+- Fully responsive design across mobile, tablet, and desktop
+- Structured sections: areas of practice (clinical and legal), service modalities, and an interactive FAQ
+- Floating WhatsApp CTA button with a pre-filled scheduling message
+- Consistent visual identity using organic shapes and CSS custom properties (`:root`)
+
+## Tech Stack
+
+- **HTML5** — semantic structure for better SEO
+- **CSS3** — advanced layouts with Flexbox and CSS Grid
+- **JavaScript** — FAQ interactivity and scroll animations
+
+## Credits
+
+Developed by **Matheus Poli Chiarelli** as lead developer, through Mythros Digital, with front-end/design contribution from **Lin Shiau Lon Rocha**.
+
+## Author
+
+**Matheus Poli Chiarelli**
+Physics Engineer (UFSCar) turned Full-Stack Developer, building AI agents in Python, backed by robust .NET architecture and cross-platform Flutter apps.
+
+- Portfolio: [matheuspolichiarelli.com](https://matheuspolichiarelli.com)
+- LinkedIn: [linkedin.com/in/matheuspolichiarelli](https://linkedin.com/in/matheuspolichiarelli)
